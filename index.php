@@ -9,5 +9,7 @@ if(is_null($_SESSION['id'])){
     header("location: user_form.php");
 }
 echo "WELLCOME TO THE VICTORINA ".$_SESSION['name'];
+
+
 ?>
 
