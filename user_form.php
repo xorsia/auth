@@ -37,17 +37,3 @@ if($_POST['name'] && $_POST['sure_name'] && $_POST['lust_name']){
     <input type="submit" name="login" value="login">
 </form>
 
-<?php
-exit();
-if(!is_null($_SESSION['name']) && $_SESSION['name'] == 'Daniel'){
-    header('location: index.php');
-}
-
-if($_POST['name'] && $_POST['name'] && $_POST['name']){
-    $_SESSION['name'] = $_POST['name'];
-    header("location: index.php");
-} elseif($_POST["login"]) {
-    header("location: user_form.php");
-}
-
-?>

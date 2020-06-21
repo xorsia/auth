@@ -38,5 +38,4 @@ require_once ('db.php');
                 return false;
             }
         }
-
     }

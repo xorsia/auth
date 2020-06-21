@@ -1,4 +1,9 @@
 <?php
+require_once ('class/questions.php');
+
+$q = new Questions();
+$q->GetQuestions();
+
 require_once ('class/session.php');
 require_once ('class/user.php');
 session_start();
