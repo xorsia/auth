@@ -10,23 +10,25 @@ if(is_null($_SESSION['id'])){
     header("location: user_form.php");
 }
 echo "WELLCOME TO THE VICTORINA ".$_SESSION['name'];
-echo "<hr>";
+echo "<br>";
 
 $q = new Questions();
 $data = $q->GetQuestions();
-echo "<pre>";
+
 for($i=0;$i<count($data);$i++){
-    echo($data[$i]['name'])."<br>";
-    echo "<hr>";
-    echo "<hr>";
+    echo "<p>".($data[$i]['name'])."</p><br>";
+
     for($j=0;$j<count($data[$i][0]['data']);$j++){
-        echo "<hr>";
-        print_r($data[$i][0]['data'][$j][2]);
+        echo "<form method='post'>";
+        echo "<input type='checkbox' name='answer' value='0'>".$data[$i][0]['data'][$j][2];
+        echo "<br>";
+        echo "</form>";
+
+//        print_r($data[$i][0]['data'][$j][2]);
+
         echo "<br>";
     }
     echo "<hr>";
 }
-
-
 ?>
 
