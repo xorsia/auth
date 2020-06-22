@@ -20,7 +20,7 @@ for($i=0;$i<count($data);$i++){
 
     for($j=0;$j<count($data[$i][0]['data']);$j++){
         echo "<form method='post'>";
-        echo "<input type='checkbox' name='answer' value='0'>".$data[$i][0]['data'][$j][2];
+        echo "<input type='checkbox' name='answer' value='0 .'>".$data[$i][0]['data'][$j][2];
         echo "<br>";
         echo "</form>";
 
