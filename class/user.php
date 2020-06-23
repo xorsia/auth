@@ -38,4 +38,16 @@ require_once ('db.php');
                 return false;
             }
         }
+
+        public function SetResult($u_session_id,$result){
+//            echo $u_session_id;
+//            echo "<br>";
+//            echo $result;
+            $sql = mysqli_query(Db::Connect(), "INSERT INTO `rate` (`result`,`u_s_id`) VALUES ('$result','$u_session_id')");
+            if($sql){
+                return true;
+            }else {
+                return false;
+            }
+        }
     }
