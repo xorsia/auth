@@ -10,9 +10,14 @@ if(is_null($_SESSION['id'])){
 } elseif ($user->GetSessionId($_SESSION['name']) != $_SESSION['id']){
     header("location: user_form.php");
 }
+include 'front/header.php';
 $q = new Questions();
 $data = $q->GetQuestions();
 
+?>
+    <script src="/js/timer.js"></script>
+    <div>Registration closes in <span id="time">02:00</span> minutes!</div>
+<?php
 echo "WELLCOME TO THE VICTORINA ".$_SESSION['name'];
 echo "<br>";
 
