@@ -3,6 +3,7 @@ require_once ('class/questions.php');
 require_once ('class/session.php');
 require_once ('class/user.php');
 session_start();
+//$_SESSION['id'] = null; //test
 $user = new User();
 if(is_null($_SESSION['id'])){
     header("location: user_form.php");
