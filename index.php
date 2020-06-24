@@ -10,7 +10,11 @@ if(is_null($_SESSION['id'])){
 } elseif ($user->GetSessionId($_SESSION['name']) != $_SESSION['id']){
     header("location: user_form.php");
 }
-include 'front/header.php';
+if($_SESSION['result_error_message']){
+    echo $_SESSION['result_error_message'];
+}
+//include 'front/header.php';
+
 $q = new Questions();
 $data = $q->GetQuestions();
 
@@ -24,6 +28,8 @@ echo "<br>";
 echo "<form method='Post' action='result.php'>";
 for($i=0;$i<count($data);$i++){
     echo "<p>".($data[$i]['name'])."</p><br>";
+    $answer_data = shuffle($data[$i][0]['data']);
+
     for($j=0;$j<count($data[$i][0]['data']);$j++){
         $value = $data[$i][0]['data'][$j][3];
         $input_name  = "answer_".$i;
